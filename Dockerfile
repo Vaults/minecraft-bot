@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install mindflayer
+RUN npm install mineflayer
 
 CMD ["node", "afk-bot.js"]
 
