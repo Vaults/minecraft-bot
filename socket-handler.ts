@@ -35,6 +35,7 @@ export class SocketHandler {
         socket.on('disconnect', () => {
           Logger.removeExtension(lc);
           Logger.log("Socket user disconnected.")
+          this.isInitialized = false;
         });
 
         Logger.log("Socket user connected.");
