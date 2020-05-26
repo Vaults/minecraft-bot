@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install mineflayer
+RUN npm install
 
-CMD ["node", "afk-bot.js"]
+CMD ["npx", "ts-node", "afk-bot.ts"]
 
