@@ -1,5 +1,5 @@
 import { BotModule } from "./bot-module";
-import { mineflayer } from "mineflayer";
+import { Bot } from "mineflayer";
 import { TreeBotModule } from "./tree-bot";
 import { Vec3 } from "vec3";
 import { Logger } from "./logger";
@@ -8,7 +8,7 @@ import { Logger } from "./logger";
 export class BotModuleManager {
     private activeModules: BotModule[] = [];
 
-    constructor(private bot: mineflayer.Bot){}
+    constructor(private bot: Bot){}
 
     public stopModule (botModuleIden: string) {
         const botModule = this.activeModules.find(o => o.getIdentifier() == botModuleIden);

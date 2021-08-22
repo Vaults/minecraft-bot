@@ -1,15 +1,15 @@
 import { Input } from './input';
 import { SocketHandler } from './socket-handler';
 import { Logger } from './logger';
+import { Bot, createBot } from 'mineflayer';
 
 
-const mineflayer = require("mineflayer");
-const bot = mineflayer.createBot({
+const bot: Bot = createBot({
   host: process.env.MC_HOST,
-  port: (process.env.MC_PORT || 25565),
+  port: (+process.env.MC_PORT || 25565),
   username: process.env.MC_USER,
   password: process.env.MC_PASS,
-  version: null
+  version: process.env.MC_VERSION
 });
 
 bot.on('chat', (uname, mess)  => {
@@ -23,6 +23,10 @@ bot.on('playerJoined', (player) => {
 });
 bot.on('playerLeft', (player) => {
     Logger.log(`${player.username} left`);
+});
+bot.on('login', () => {
+  console.log('Bot connected');
+
 });
 
 const inputHandler = new Input(bot);

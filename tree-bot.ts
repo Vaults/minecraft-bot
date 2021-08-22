@@ -1,5 +1,5 @@
 import { Vec3 } from 'vec3'; 
-import {mineflayer} from 'mineflayer';
+import {Bot} from 'mineflayer';
 
 import { BotModule, ErrorHandler } from './bot-module';
 import { Logger } from './logger';
@@ -28,7 +28,7 @@ export class TreeBotModule implements BotModule {
 	private errorHandler: ErrorHandler;
 	private interval: NodeJS.Timer;
 
-	constructor(private bot: mineflayer.Bot, private dirtBlockPos: any){ }
+	constructor(private bot: Bot, private dirtBlockPos: any){ }
 
 	setErrorHandler(e: ErrorHandler){
 		this.errorHandler = this.errorHandler;
