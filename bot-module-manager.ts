@@ -27,7 +27,9 @@ export class BotModuleManager {
             });
         } catch (e) {
             Logger.log(`Could not start module ${botModuleIden}.`)
-            Logger.log(`Syntax for module: /module start TreeBot ${botModule.getArgsDescription()}`)
+            if(botModule) {
+                Logger.log(`Syntax for module: /module start TreeBot ${botModule.getArgsDescription()}`)
+            }
             Logger.log(e.message);
         }        
     }
